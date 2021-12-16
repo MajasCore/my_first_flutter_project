@@ -1,16 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/material.dart';
 
 
 
 
 
 class SeconddPage extends StatelessWidget {
+  final List <String> _listItem = [
+    'assets/plant1.jpg',
+    'assets/plant2.jpg',
+    'assets/plant3.jpg',
+    'assets/plant4.jpg',
+    'assets/plant5.jpg',
+    'assets/plant6.jpg',
+    'assets/plant1.jpg',
+    'assets/plant1.jpg',
+    'assets/plant1.jpg',
+  ];
+ 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: true, 
       home: Scaffold(
-     backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[200],
         body: 
         SafeArea(
           child: SingleChildScrollView( child: Column(
@@ -144,314 +158,38 @@ class SeconddPage extends StatelessWidget {
               SizedBox(
                 height: 20.0, 
               ),
-
-               
-              Container( 
-                child: Row(
-                  children: <Widget>[  
-                    Container( 
-                      width: 170.0,
-                      height: 170.0,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(20),       
-                      ),
-                      margin: EdgeInsets.only(left: 20.0),
-                      padding: EdgeInsets.only(left: 10.0, top: 10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[ 
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset (
-                              'assets/plant1.jpg', 
-                              width: 150.0, 
-                              height: 100.0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 5.0,
-                          ),
-                          Text(
-                            'Codiaeum',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                            ), 
-                          ),
-                          Text(
-                            'Leaf Plants',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ), 
-                          ), 
-                        ]
-                      ),  
+              GridView.count(
+                shrinkWrap: true,
+                crossAxisCount: 2,
+                padding: EdgeInsets.all(20.0),
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
+                children: _listItem.map((item) => Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0), 
+                  ),
+                  child: Container(
+                    height: 170.0,
+                    width: 170.0,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    Container( 
-                      width: 170.0,
-                      height: 170.0,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(20),       
+                    padding: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 45.0),  
+                    child:  
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(item),
+                            fit: BoxFit.cover
+                          ),
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
                       ),
-                      margin: EdgeInsets.only(left: 25.0, top: 20.0),
-                      padding: EdgeInsets.only(left: 10.0, top: 10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[ 
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset (
-                              'assets/plant2.jpg', 
-                              width: 150.0, 
-                              height: 100.0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 5.0,
-                          ),
-                          Text(
-                            'Dwarf Tree',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                            ), 
-                          ),
-                          Text(
-                            'Succulents',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ), 
-                          ), 
-                        ]
-                      ),  
-                    ),
-
-  
-
-                  ]
-                ),
+                  ),
+                )).toList(),  
               ),
-              Container( 
-                child: Row(
-                  children: <Widget>[  
-                    Container( 
-                      width: 170.0,
-                      height: 170.0,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(20),       
-                      ),
-                      margin: EdgeInsets.only(left: 20.0),
-                      padding: EdgeInsets.only(left: 10.0, top: 10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[ 
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset (
-                              'assets/plant3.jpg', 
-                              width: 150.0, 
-                              height: 100.0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 5.0,
-                          ),
-                          Text(
-                            'Red Rose',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                            ), 
-                          ),
-                          Text(
-                            'Flowers',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ), 
-                          ), 
-                        ]
-                      ),  
-                    ),
-                    Container( 
-                      width: 170.0,
-                      height: 170.0,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(20),       
-                      ),
-                      margin: EdgeInsets.only(left: 25.0, top: 20.0),
-                      padding: EdgeInsets.only(left: 10.0, top: 10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[ 
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset (
-                              'assets/plant4.jpg', 
-                              width: 150.0, 
-                              height: 100.0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 5.0,
-                          ),
-                          Text(
-                            'Pumpkin',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                            ), 
-                          ),
-                          Text(
-                            'Vegetables',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ), 
-                          ), 
-                        ]
-                      ),  
-                    ),
-
-  
-
-                  ]
-                ),
-              ),
-              Container( 
-                child: Row(
-                  children: <Widget>[  
-                    Container( 
-                      width: 170.0,
-                      height: 170.0,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(20),       
-                      ),
-                      margin: EdgeInsets.only(left: 20.0),
-                      padding: EdgeInsets.only(left: 10.0, top: 10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[ 
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset (
-                              'assets/plant5.jpg', 
-                              width: 150.0, 
-                              height: 100.0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 5.0,
-                          ),
-                          Text(
-                            'Codiaeum',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                            ), 
-                          ),
-                          Text(
-                            'Succulents',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ), 
-                          ), 
-                        ]
-                      ),  
-                    ),
-                    Container( 
-                      width: 170.0,
-                      height: 170.0,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(20),       
-                      ),
-                      margin: EdgeInsets.only(left: 25.0, top: 20.0),
-                      padding: EdgeInsets.only(left: 10.0, top: 10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[ 
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset (
-                              'assets/plant6.jpg', 
-                              width: 150.0, 
-                              height: 100.0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 5.0,
-                          ),
-                          Text(
-                            'Codiaeum',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                            ), 
-                          ),
-                          Text(
-                            'Leaf Plants',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontFamily: 'Roboto',
-                              color: Colors.black,
-                              fontWeight: FontWeight.w200,
-                            ), 
-                          ), 
-                        ]
-                      ),  
-                    ),
-
-  
-
-                  ]
-                ),
-              ),
-
-
-
+              
             ]
           ),),
         ),

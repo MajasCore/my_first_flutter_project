@@ -5,6 +5,15 @@ import 'package:flutter/material.dart';
 
 
 class ThirdPage extends StatelessWidget {
+  final List <String> _plants = [
+    'Succulents',
+    'Leaf Plants',
+    'Codiauem Plants',
+    'Flower Plants',
+    'Leaf Plants',
+    'Flower', 
+  ];
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -309,54 +318,30 @@ class ThirdPage extends StatelessWidget {
                   ),
                 ]  
               ),
-              Container(
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      width: 170.0,
-                      height: 140.0,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      margin: EdgeInsets.only(left: 20.0, top: 20.0),
-                      padding: EdgeInsets.only(left: 15.0, top: 20.0),
-                        child: Text(
-                          'Succulants',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            fontFamily: 'Roboto',
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500,   
-                          ),  
-                        ), 
+              GridView.count(
+                shrinkWrap: true,
+                crossAxisCount: 2,
+                padding: EdgeInsets.all(20.0),
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
+                children: _plants.map((item) => Card(
+                  color: Colors.grey[300],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0), 
+                  ),
+                  child: Padding( padding: EdgeInsets.only(top: 15.0, left: 10.0),
+                  child: Text( 
+                    '${item}',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontFamily: 'Roboto',
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500, 
                     ),
-                    Container(
-                      width: 170.0,
-                      height: 140.0,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      margin: EdgeInsets.only(left: 20.0, top: 20.0),
-                      padding: EdgeInsets.only(left: 15.0, top: 20.0),
-                        child: Text(
-                          'Leaf Plants',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            fontFamily: 'Roboto',
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500,   
-                          ),  
-                        ), 
-                    ),
-
-                  ]
-                ),
+                  ),),
+                )).toList(),        
               ),
-              
+                            
             ]
           ),
              
